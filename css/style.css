@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:700");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hero__title {
+  pointer-events: none;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  z-index: 1;
+}
+
+.hero__title.active {
+  color: #222;
+}
+
+.cube {
+  position: absolute;
+  top: 80vh;
+  left: 45vw;
+  width: 10px;
+  height: 10px;
+  border: solid 1px #444;
+  transform-origin: top left;
+  transform: scale(0) rotate(0deg) translate(-50%, -50%);
+  animation: cube 12s ease-in forwards infinite;
+}
+
+.cube.active {
+  border: solid 1px #0040C1;
+}
+
+.cube.even {
+  /* Estilos para los elementos .cube pares */
+  border-color: #444;
+}
+
+.cube.even.active {
+  /* Estilos para los elementos .cube pares cuando tienen la clase 'active' */
+  border-color: #0040C1;
+}
+
+.cube:nth-child(2) {
+  animation-delay: 2s;
+  left: 25vw;
+  top: 40vh;
+}
+
+.cube:nth-child(3) {
+  animation-delay: 4s;
+  left: 75vw;
+  top: 50vh;
+}
+
+.cube:nth-child(4) {
+  animation-delay: 6s;
+  left: 90vw;
+  top: 10vh;
+}
+
+.cube:nth-child(5) {
+  animation-delay: 8s;
+  left: 10vw;
+  top: 85vh;
+}
+
+.cube:nth-child(6) {
+  animation-delay: 10s;
+  left: 50vw;
+  top: 10vh;
+}
+@keyframes cube {
+  from {
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+  }
+  to {
+    transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: 0.5s;
+  background-color: #0040C1;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Montserrat", sans-serif;
+}
+body.active {
+  background: #444;
+}
+
+.toggle {
+  position: relative;
+  display: block;
+  width: 320px;
+  height: 160px;
+  border-radius: 160px;
+  background: #222;
+  transition: 0.5s;
+  box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1), inset 0 8px 8px rgb(0, 0, 0), inset 1px -4px 8px 6px rgb(0, 0, 0);
+}
+.toggle .indicator {
+  transition: 0.5s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, #444, #222);
+  transform: scale(0.9);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5), inset 0 4px 4px rgba(255, 255, 255, 0.2), inset 0 -4px 4px rgba(255, 255, 255, 0.2);
+}
+.toggle.active {
+  background: rgb(248, 247, 247);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1), inset 0 4px 4px rgba(255, 255, 255, 0.1), inset 0 -4px 4px rgba(255, 255, 255, 0.1);
+}
+.toggle.active .indicator {
+  left: 160px;
+  transition: 0.5s;
+  background: linear-gradient(to bottom, #f1eeee, #fcf9f9);
+}
+
+#github {
+  margin-top: 5%;
+  margin-left: 0%;
+  width: 20%;
+  height: auto;
+}
+
+#linkedin {
+  width: 20%;
+  height: auto;
+}
+
+.firma {
+  color: white;
+  display: inline;
+  text-align: center;
+  width: 35%;
+  position: absolute;
+  right: 0%;
+  bottom: 5%;
+  text-shadow: 5px 5px 5px black;
+}/*# sourceMappingURL=style.css.map */
